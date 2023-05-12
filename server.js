@@ -1,12 +1,18 @@
 const path = require('path');
 const express = require('express');
 const sequelize = require('./config/connection');
+const exphbs = require('express-handlebars');
+const hbs = exphbs.create({});
 
 const PORT = process.env.PORT || 3001;
 const app = express();
+app.use(express.static(path.join(__dirname, 'public')))
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
+app.set('views', './views');
 
 app.get('/', (req, res) => {
-    res.send('<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Tech Blog</title><link rel="stylesheet" type="text/css" href="../public/css/jass.css"><link rel="stylesheet" type="text/css" href="../public/css/style.css"></head><body><p>Welcome!</p></body></html>');
+    res.render('home');
 });
 
 sequelize.sync({force:false}).then(() => {
