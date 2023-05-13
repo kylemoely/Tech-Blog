@@ -12,8 +12,12 @@ app.set('view engine', 'handlebars');
 app.set('views', './views');
 
 app.get('/', (req, res) => {
-    res.render('main');
+    res.render('home');
 });
+
+app.get('/login', (req, res) => {
+    res.render('login');
+})
 
 sequelize.sync({force:false}).then(() => {
     app.listen(PORT, () => console.log(`Now listening at localhost:${PORT}`));

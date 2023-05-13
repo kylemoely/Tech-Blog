@@ -22,6 +22,10 @@ header{
     color:darkkhaki;
 }
 
+#navBar *:hover{
+    cursor:pointer;
+}
+
 #banner{
     background-color:darkkhaki;
     width:max-content;
@@ -36,13 +40,16 @@ header{
 
 body{
     background-color: darkkhaki;
+    display:flex;
+    width:100vw;
+    flex-direction:column;
 }
 
 .card{
     background-color: var(--pageColor);
     border: 2px solid var(--navColor);
-    
-    margin: 0 400px;
+    align-self:center;
+    width:600px;
 }
 
 .cardHead{
@@ -90,4 +97,16 @@ form button{
     width: 150px;
     align-self:center;
     background-color: rgb(255, 252, 247);
+    border-radius: 5px;
 }
+
+.butn:hover{
+    cursor:pointer;
+}
+
+form h2{
+    font-size:12px;
+    text-decoration: underline;
+    align-self:center;
+}
+
