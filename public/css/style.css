@@ -1,9 +1,15 @@
+:root{
+    --navColor: rgb(42, 54, 165);
+    --pageColor: darkkhaki;
+}
+
 header{
-    background-color:rgb(42, 54, 165);
+    background-color:var(--navColor);
     width:100vw;
     display:flex;
     flex-direction: column;
     align-content:start;
+    margin-bottom: 20px;
 }
 
 #navBar{
@@ -22,7 +28,7 @@ header{
     padding: 5px 12px;
     font-size: 30px;
     font-weight:700;
-    color:rgb(42, 54, 165);
+    color:var(--navColor);
     margin: 15px 20px 25px 40px;
     border-radius:10px;
     box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.516);
@@ -30,4 +36,58 @@ header{
 
 body{
     background-color: darkkhaki;
+}
+
+.card{
+    background-color: var(--pageColor);
+    border: 2px solid var(--navColor);
+    
+    margin: 0 400px;
+}
+
+.cardHead{
+    background-color: var(--navColor);
+    display:flex;
+    justify-content:space-between;
+    align-content:start;
+    padding:7px 0px;
+}
+
+.cardTitle{
+    color: var(--pageColor);
+    font-size: 20px;
+    font-weight:500;
+    margin-left: 5px;
+}
+
+form{
+    display:flex;
+    flex-direction: column;
+}
+
+form *{
+    margin: 5px 0px;
+}
+
+form label{
+    font-size: 25px;
+}
+
+form input:focus{
+    outline:none;
+    border:2px solid black;
+}
+
+form input{
+    margin: 5px 15px;
+    font-size:22px;
+    border:2px solid rgba(0, 0, 0, 0);
+    border-radius:5px;
+    background-color: rgb(255, 252, 247);
+}
+
+form button{
+    width: 150px;
+    align-self:center;
+    background-color: rgb(255, 252, 247);
 }
