@@ -6,7 +6,7 @@ const hbs = exphbs.create({});
 
 const PORT = process.env.PORT || 3001;
 const app = express();
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'public')));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.set('views', './views');

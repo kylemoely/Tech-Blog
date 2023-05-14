@@ -43,6 +43,40 @@ body{
     display:flex;
     width:100vw;
     flex-direction:column;
+    position:relative;
+}
+
+main{
+    display: flex;
+    justify-content:space-evenly;
+    align-items:center;
+}
+
+sidebar{
+    background-color: var(--pageColor);
+    border: 3px solid var(--navColor);
+    width:250px;
+    height: max-content;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+sidebar *{
+    margin: 5px;
+}
+
+sidebar h1, p{
+    color:var(--navColor);
+    text-align: center;
+}
+
+sidebar h1{
+    font-size:50px;
+}
+
+sidebar p{
+    font-size:25px;
 }
 
 .card{
@@ -50,6 +84,7 @@ body{
     border: 2px solid var(--navColor);
     align-self:center;
     width:600px;
+    margin-top: 15px;
 }
 
 .cardHead{
@@ -65,6 +100,19 @@ body{
     font-size: 20px;
     font-weight:500;
     margin-left: 5px;
+}
+
+.cardInfo{
+    color: var(--pageColor);
+    font-size: 15px;
+    font-weight:400;
+    margin-right: 5px;
+}
+
+.card p{
+    text-align: left;
+    padding: 5px;
+    font-weight:500;
 }
 
 form{
@@ -93,7 +141,7 @@ form input{
     background-color: rgb(255, 252, 247);
 }
 
-form button{
+button.butn{
     width: 150px;
     align-self:center;
     background-color: rgb(255, 252, 247);
