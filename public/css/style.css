@@ -121,7 +121,7 @@ form{
 }
 
 form *{
-    margin: 5px 0px;
+    margin: 5px 0px 0px;
 }
 
 form label{
@@ -139,6 +139,10 @@ form input{
     border:2px solid rgba(0, 0, 0, 0);
     border-radius:5px;
     background-color: rgb(255, 252, 247);
+}
+
+label p{
+    font-size:14px;
 }
 
 button.butn{

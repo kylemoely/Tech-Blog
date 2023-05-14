@@ -13,8 +13,12 @@
         <nav id="navBar">
             <div id = 'homeBtn'>Home</div>
             <div id='dashboardBtn'>Dashboard</div>
-            <div id="loginBtn">Login</div>
+            {{#if loggedIn}}
             <div id="logoutBtn">Logout</div>
+            {{else}}
+            <div id="loginBtn">Login</div>
+            {{/if}}
+
         </nav>
         <span id="banner">The Tech Blog</span>
     </header>
