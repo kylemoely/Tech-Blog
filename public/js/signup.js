@@ -26,7 +26,6 @@ const makeUser = async (event) => {
         } else {
             alert('Failed to sign up.');
         }
-        console.log(response);
     } else{
         alert("Please fill out all fields.");
     }

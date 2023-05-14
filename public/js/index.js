@@ -16,4 +16,3 @@ const goToLogin = async () => {
 
 loginBtn.addEventListener("click", goToLogin);
 homeBtn.addEventListener("click", goToHome);
-console.log("Linked!");
