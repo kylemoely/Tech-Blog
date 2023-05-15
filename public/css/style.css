@@ -83,7 +83,7 @@ sidebar p{
     background-color: var(--pageColor);
     border: 2px solid var(--navColor);
     align-self:center;
-    width:600px;
+    width:800px;
     margin-top: 15px;
 }
 
@@ -100,6 +100,7 @@ sidebar p{
     font-size: 20px;
     font-weight:500;
     margin-left: 5px;
+    max-width:350px;
 }
 
 .cardInfo{
