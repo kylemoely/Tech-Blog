@@ -36,7 +36,8 @@ router.get('/:user', async (req, res) => {
         });
         // Get the plain JS object for the User
         const pageUser = await userData.get({ plain: true });
-        res.render('dashboard', { pageUser, loggedIn: req.session.loggedIn, username: req.session.username })
+        const isUserHome = pageUser.username===req.session.username;
+        res.render('dashboard', { pageUser, loggedIn: req.session.loggedIn, username: req.session.username, isUserHome })
     } catch(err) {
         console.log(err);
         res.status(500).json(err);

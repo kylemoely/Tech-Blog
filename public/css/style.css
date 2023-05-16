@@ -49,7 +49,7 @@ body{
 main{
     display: flex;
     justify-content:space-evenly;
-    align-items:center;
+    align-items:start;
 }
 
 sidebar{
@@ -72,7 +72,7 @@ sidebar h1, p{
 }
 
 sidebar h1{
-    font-size:50px;
+    font-size:40px;
 }
 
 sidebar p{
@@ -134,12 +134,18 @@ form input:focus{
     border:2px solid black;
 }
 
-form input{
+form textarea:focus{
+    outline:none;
+    border:2px solid black;
+}
+
+form input, textarea{
     margin: 5px 15px;
     font-size:22px;
     border:2px solid rgba(0, 0, 0, 0);
     border-radius:5px;
     background-color: rgb(255, 252, 247);
+    resize:none;
 }
 
 label p{
@@ -163,3 +169,12 @@ form h2{
     align-self:center;
 }
 
+#content{
+    height:300px;
+    font-size:15px;
+}
+
+#title{
+    height:30px;
+    font-size:15px;
+}

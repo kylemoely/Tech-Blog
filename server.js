@@ -29,6 +29,10 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(routes);
 
+hbs.handlebars.registerHelper('isEqual', function(user1, user2) {
+    return user1===user2;
+})
+
 
 sequelize.sync({force:false}).then(() => {
     app.listen(PORT, () => console.log(`Now listening at localhost:${PORT}`));
