@@ -15,12 +15,12 @@ User.init(
             allowNull:false,
             unique:true,
             autoIncrement:true,
-            primaryKey: true
         },
         username: {
             type: DataTypes.STRING,
             allowNull: false,
             unique: true,
+            primaryKey:true,
             validate: {
                 isAlphanumeric:true,
                 len: [5,16],

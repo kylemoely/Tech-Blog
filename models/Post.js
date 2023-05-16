@@ -25,11 +25,16 @@ Post.init(
             validate: {
                 len: [1, 30]
             }
+        },
+        content: {
+            type: DataTypes.TEXT,
+            allowNull: false,
         }
     },
     {
         sequelize,
         freezeTableName: true,
+        timestamps: true,
         modelName: 'post'
     }
 )
