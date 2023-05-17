@@ -18,26 +18,16 @@ router.get('/signup', (req, res) => {
 
 router.get('/:user', async (req, res) => {
     try{
-        // find User by username (primary key), from url user param
-        const userData = await User.findByPk(req.params.user,{
-            // include all of the Posts associated with this user
-            include: [
-                {
-                    model: Post,
-                    attributes: [
-                        'id',
-                        'username',
-                        'title',
-                        'content',
-                        'createdAt'
-                    ]
-                } 
-            ]
+        const posts = await Post.findAll({
+            where: { username: req.params.user},
+            order: [['createdAt', 'DESC']]
         });
-        // Get the plain JS object for the User
-        const pageUser = await userData.get({ plain: true });
-        const isUserHome = pageUser.username===req.session.username;
-        res.render('dashboard', { pageUser, loggedIn: req.session.loggedIn, username: req.session.username, isUserHome })
+        const allPosts = [];
+        for(let x=0;x<posts.length;x++){
+            allPosts.push(posts[x].dataValues);
+        }
+        const isUserHome = req.params.user===req.session.username;
+        res.render('dashboard', { allPosts, loggedIn: req.session.loggedIn, username: req.session.username, isUserHome })
     } catch(err) {
         console.log(err);
         res.status(500).json(err);
