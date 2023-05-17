@@ -1,6 +1,6 @@
 :root{
-    --navColor: rgb(42, 54, 165);
-    --pageColor: darkkhaki;
+    --navColor: rgb(30, 18, 121);
+    --pageColor: rgb(203, 200, 219);
 }
 
 header{
@@ -142,7 +142,7 @@ form textarea:focus{
 form input, textarea{
     margin: 5px 15px;
     font-size:22px;
-    border:2px solid rgba(0, 0, 0, 0);
+    border:2px solid rgb(0, 0, 0);
     border-radius:5px;
     background-color: rgb(255, 252, 247);
     resize:none;
