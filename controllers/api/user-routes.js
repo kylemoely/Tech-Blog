@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Post } = require('../../models');
 
 // CREATE new user
 router.post('/', async (req, res) => {
@@ -60,6 +60,20 @@ router.post('/logout', (req, res) => {
         });
     } else {
         res.status(404).end();
+    }
+});
+
+router.post('/newpost', async (req, res) => {
+    try{
+        const creation = await Post.create({
+            username: req.session.username,
+            title: req.body.newTitle,
+            content: req.body.newContent,
+        });
+        res.status(200).json(creation);
+    } catch(err){
+        console.log(err);
+        res.status(500).json(err);
     }
 });
 
