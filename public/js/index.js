@@ -1,16 +1,19 @@
 const loginBtn = document.getElementById('loginBtn');
 const homeBtn = document.getElementById('homeBtn');
 const logoutBtn = document.getElementById('logoutBtn');
+const dashBtn = document.getElementById('dashboardBtn');
 
 
 const goToHome = async () => {
-    const response = await fetch('/');
-    location.href = response.url;
+    location.href = '/';
 }
 
 const goToLogin = async () => {
-    const response = await fetch('/login');
-    location.href = response.url;
+    location.href = '/login';
+}
+
+const goToDash = async () => {
+    location.href = '/dashboard';
 }
 
 const logout = async () => {
@@ -25,6 +28,7 @@ const logout = async () => {
     }
 }
 
+dashBtn.addEventListener("click", goToDash);
 logoutBtn.addEventListener("click", logout);
 loginBtn.addEventListener("click", goToLogin);
 homeBtn.addEventListener("click", goToHome);

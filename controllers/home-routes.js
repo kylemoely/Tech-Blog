@@ -16,6 +16,19 @@ router.get('/signup', (req, res) => {
     res.render('signup');
 })
 
+router.get('/dashboard', async (req, res) => {
+    try{
+        if(req.session.loggedIn && req.session.username){
+            res.redirect(`/${req.session.username}`);
+        } else{
+            res.redirect('/login');
+        }
+    } catch (err){
+        console.log(err);
+        res.status(500).json(err);
+    }
+})
+
 router.get('/:user', async (req, res) => {
     try{
         const posts = await Post.findAll({
