@@ -2,7 +2,16 @@ const router = require('express').Router();
 const { User, Post } = require('../models');
 
 router.get('/', async (req, res) => {
+    const response = await Post.findAll({
+        limit:3,
+        order: [['createdAt', 'DESC']]
+    });
+    const newposts = [];
+    for(let x=0;x<response.length;x++){
+        newposts.push(response[x].dataValues);
+    }
     res.render('home', {
+        newposts,
         loggedIn: req.session.loggedIn,
         username: req.session.username
     });
